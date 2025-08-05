@@ -1,25 +1,28 @@
 import base64
 
+# HPKE_KEM_IDS: A dictionary mapping HPKE KEM (Key Encapsulation Mechanism) IDs to their names.
 HPKE_KEM_IDS = {
-    0x0010: "P-256",
-    0x0011: "P-384",
-    0x0012: "P-521",
-    0x0020: "X25519",
-    0x0021: "X448"
+    0x0010: "P-256",  # NIST P-256 elliptic curve
+    0x0011: "P-384",  # NIST P-384 elliptic curve
+    0x0012: "P-521",  # NIST P-521 elliptic curve
+    0x0020: "X25519", # Curve25519 elliptic curve
+    0x0021: "X448"    # Curve448 elliptic curve
 }
 
+# HPKE_KDF_IDS: A dictionary mapping HPKE KDF (Key Derivation Function) IDs to their names.
 HPKE_KDF_IDS = {
     0x0001: "HKDF-SHA256",
     0x0002: "HKDF-SHA384",
     0x0003: "HKDF-SHA512"
 }
 
+# HPKE_AEAD_IDS: A dictionary mapping HPKE AEAD (Authenticated Encryption with Associated Data) IDs to their names.
 HPKE_AEAD_IDS = {
     0x0001: "AES-128-GCM",
     0x0002: "AES-256-GCM",
     0x0003: "ChaCha20-Poly1305",
     0xFFFF: "Export-only"
-}    
+}
 
 def get_line_start(data, offset, length):
     """
